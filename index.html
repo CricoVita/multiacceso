@@ -3,28 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <title>Datos para Transferencia - Banco Provincia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     body {
         font-family: Arial, sans-serif;
         background: #f8f9fa;
-        padding: 40px;
-        text-align: center;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
     }
     .box {
         background: #fff;
         padding: 25px;
         border: 1px solid #ccc;
-        max-width: 420px;
-        margin: auto;
         border-radius: 8px;
+        max-width: 420px;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.08);
+        text-align: center;
     }
     h2 {
         margin-bottom: 10px;
+        font-size: 24px;
     }
     h3 {
         margin-top: 0;
+        margin-bottom: 20px;
         color: #2a7b2a;
         font-weight: bold;
+        font-size: 20px;
     }
     p {
         font-size: 18px;
@@ -35,6 +45,7 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
+        word-break: break-word;
     }
     .copy-icon {
         width: 20px;
@@ -49,6 +60,17 @@
     .copied {
         filter: hue-rotate(90deg) brightness(1.3);
         opacity: 1 !important;
+    }
+    .no-link {
+        pointer-events: none;
+        text-decoration: none;
+        color: #000;
+        user-select: text;
+    }
+    @media (max-width: 480px) {
+        h2 { font-size: 22px; }
+        h3 { font-size: 18px; }
+        p { font-size: 16px; }
     }
 </style>
 <script>
@@ -84,8 +106,13 @@
         </span>
     </p>
 
-    <p><strong>Titular:</strong><br> Cristian Roly Velasquez Burgoa</p>
-    <p><strong>CUIT:</strong><br> 20-95017739-0</p>
+    <p><strong>Titular:</strong><br>
+        <span class="no-link">Cristian Roly Velasquez Burgoa</span>
+    </p>
+
+    <p><strong>CUIT:</strong><br>
+        <span class="no-link">20-95017739-0</span>
+    </p>
 </div>
 
 </body>
