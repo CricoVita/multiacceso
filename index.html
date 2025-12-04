@@ -29,8 +29,36 @@
     p {
         font-size: 18px;
         line-height: 1.6;
+        margin: 18px 0;
+    }
+    .dato {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .copy-icon {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: 0.2s ease;
+    }
+    .copy-icon:hover {
+        opacity: 1;
+    }
+    .copied {
+        filter: hue-rotate(90deg) brightness(1.3);
+        opacity: 1 !important;
     }
 </style>
+<script>
+    function copiar(texto, iconoId) {
+        navigator.clipboard.writeText(texto);
+        const icono = document.getElementById(iconoId);
+        icono.classList.add("copied");
+        setTimeout(() => icono.classList.remove("copied"), 800);
+    }
+</script>
 </head>
 <body>
 
@@ -38,8 +66,24 @@
     <h2>Datos para Transferencia</h2>
     <h3>Banco Provincia</h3>
 
-    <p><strong>Alias:</strong><br> Internet.Multiacceso</p>
-    <p><strong>CBU:</strong><br> 0140023603506864203708</p>
+    <p><strong>Alias:</strong><br>
+        <span class="dato">
+            Internet.Multiacceso
+            <img id="iconAlias" class="copy-icon"
+                 src="https://cdn-icons-png.flaticon.com/512/60/60990.png"
+                 onclick="copiar('Internet.Multiacceso', 'iconAlias')" alt="Copiar">
+        </span>
+    </p>
+
+    <p><strong>CBU:</strong><br>
+        <span class="dato">
+            0140023603506864203708
+            <img id="iconCBU" class="copy-icon"
+                 src="https://cdn-icons-png.flaticon.com/512/60/60990.png"
+                 onclick="copiar('0140023603506864203708', 'iconCBU')" alt="Copiar">
+        </span>
+    </p>
+
     <p><strong>Titular:</strong><br> Cristian Roly Velasquez Burgoa</p>
     <p><strong>CUIT:</strong><br> 20-95017739-0</p>
 </div>
